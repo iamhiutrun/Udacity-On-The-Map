@@ -9,13 +9,18 @@ import Foundation
 import UIKit
 import MapKit
 
-class ConfirmLocationViewController: UIViewController{
+class ConfirmLocationViewController: UIViewController, UITextFieldDelegate{
     
     @IBOutlet weak var linkTextField: UITextField!
     @IBOutlet weak var mapView: MKMapView!
     
     var objectId: String?
     var studentInformation : StudentInformation?
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        linkTextField.delegate = self
+    }
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
@@ -75,6 +80,11 @@ class ConfirmLocationViewController: UIViewController{
             return CLLocationCoordinate2DMake(lat, lon)
         }
         return nil
+    }
+    
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        linkTextField.resignFirstResponder()
+        return true
     }
     
 }

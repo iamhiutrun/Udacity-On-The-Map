@@ -26,4 +26,14 @@ extension UIViewController{
         }
         UIApplication.shared.open(url, options: [:])
     }
+    
+    func showIndicator(_ activityIndicator : UIActivityIndicatorView){
+        activityIndicator.isHidden = false
+        activityIndicator.startAnimating()
+    }
+    
+    func hideIndicator(_ activityIndicator : UIActivityIndicatorView){
+        activityIndicator.isHidden = true
+        activityIndicator.stopAnimating()
+    }
 }

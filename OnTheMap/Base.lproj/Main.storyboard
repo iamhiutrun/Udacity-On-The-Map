@@ -74,17 +74,23 @@
                                     </button>
                                 </subviews>
                             </stackView>
+                            <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="medium" translatesAutoresizingMaskIntoConstraints="NO" id="WPN-Xi-M7p">
+                                <rect key="frame" x="197" y="599.5" width="20" height="20"/>
+                            </activityIndicatorView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="tertiarySystemBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="4Uh-oV-vZa" secondAttribute="trailing" constant="18" id="BvF-QN-4Wu"/>
                             <constraint firstItem="4Uh-oV-vZa" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="18" id="CRL-vA-Q8E"/>
+                            <constraint firstItem="WPN-Xi-M7p" firstAttribute="top" secondItem="4Uh-oV-vZa" secondAttribute="bottom" constant="18" id="Scc-Dg-gDC"/>
+                            <constraint firstItem="WPN-Xi-M7p" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="XFB-YH-4gb"/>
                             <constraint firstItem="4Uh-oV-vZa" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="tev-g3-4Xp"/>
                             <constraint firstItem="4Uh-oV-vZa" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="wjs-OQ-WIL"/>
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="acitivityIndicator" destination="WPN-Xi-M7p" id="s9t-LX-I5V"/>
                         <outlet property="password" destination="sSV-oD-zcI" id="9Nm-vz-CBG"/>
                         <outlet property="username" destination="fRB-6d-lFF" id="sAs-Dy-Uoi"/>
                         <segue destination="QWe-mI-bjj" kind="show" identifier="login" id="UCf-H3-vbi"/>
@@ -328,16 +334,21 @@
                                     <action selector="findLocationWithSender:" destination="BnW-zQ-1so" eventType="touchUpInside" id="1VD-2P-XvD"/>
                                 </connections>
                             </button>
+                            <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="medium" translatesAutoresizingMaskIntoConstraints="NO" id="jRM-hc-yhK">
+                                <rect key="frame" x="197" y="731" width="20" height="20"/>
+                            </activityIndicatorView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="R87-RT-LSB"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
+                            <constraint firstItem="jRM-hc-yhK" firstAttribute="centerX" secondItem="awt-Ju-p6b" secondAttribute="centerX" id="9vr-tD-J39"/>
                             <constraint firstItem="R87-RT-LSB" firstAttribute="bottom" secondItem="Clp-NA-LC0" secondAttribute="bottom" constant="100" id="BAG-Kh-wJj"/>
                             <constraint firstItem="R87-RT-LSB" firstAttribute="trailing" secondItem="2rd-7J-7tN" secondAttribute="trailing" id="BQL-X0-gSg"/>
                             <constraint firstItem="dyO-fC-eLu" firstAttribute="top" secondItem="GBE-eE-QNn" secondAttribute="bottom" constant="18" id="E75-8C-RE5"/>
                             <constraint firstItem="GBE-eE-QNn" firstAttribute="leading" secondItem="R87-RT-LSB" secondAttribute="leading" id="Eyo-Cq-eDr"/>
                             <constraint firstItem="6mK-Ca-KvN" firstAttribute="leading" secondItem="R87-RT-LSB" secondAttribute="leading" id="RpH-7f-Xcq"/>
                             <constraint firstItem="dyO-fC-eLu" firstAttribute="leading" secondItem="R87-RT-LSB" secondAttribute="leading" id="VYE-ew-Nai"/>
+                            <constraint firstItem="jRM-hc-yhK" firstAttribute="top" secondItem="Clp-NA-LC0" secondAttribute="bottom" constant="18" id="ZAT-P1-ndS"/>
                             <constraint firstItem="6mK-Ca-KvN" firstAttribute="top" secondItem="dyO-fC-eLu" secondAttribute="bottom" constant="18" id="ZFr-Ma-2aK"/>
                             <constraint firstItem="R87-RT-LSB" firstAttribute="trailing" secondItem="GBE-eE-QNn" secondAttribute="trailing" id="bJ1-1x-Bwi"/>
                             <constraint firstItem="GBE-eE-QNn" firstAttribute="top" secondItem="R87-RT-LSB" secondAttribute="top" constant="80" id="bOl-mF-gOM"/>
@@ -357,6 +368,7 @@
                         </barButtonItem>
                     </navigationItem>
                     <connections>
+                        <outlet property="acitivityIndicator" destination="jRM-hc-yhK" id="mEc-yf-dhj"/>
                         <outlet property="locationTextField" destination="2rd-7J-7tN" id="cxt-LK-nB3"/>
                         <segue destination="MDw-sk-bC2" kind="show" identifier="findonthemap" id="WqA-1g-BaO"/>
                     </connections>

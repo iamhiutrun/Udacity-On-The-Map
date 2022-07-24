@@ -9,26 +9,32 @@ import Foundation
 import UIKit
 import MapKit
 
-class InputLocationViewController: UIViewController{
+class InputLocationViewController: UIViewController, UITextFieldDelegate{
     
     var objectId: String?
     
+    @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
     @IBOutlet weak var locationTextField: UITextField!
     @IBAction func cancel(_ sender: Any) {
         dismiss(animated: true)
     }
     
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        locationTextField.delegate = self
+        hideIndicator(activityIndicator)
+    }
     // MARK: Find location action
     
     @IBAction func findLocation(sender: UIButton) {
         let location = locationTextField.text
         geocodePosition(newLocation: location ?? "")
-        
     }
     
     // MARK: Find geocode position
     
     private func geocodePosition(newLocation: String) {
+        showIndicator(activityIndicator)
         CLGeocoder().geocodeAddressString(newLocation) { (newMarker, error) in
             if let error = error {
                 self.showAlert(message: error.localizedDescription, title: "Location Not Found")
@@ -47,6 +53,7 @@ class InputLocationViewController: UIViewController{
                     print("There was an error.")
                 }
             }
+            self.hideIndicator(self.activityIndicator)
         }
     }
     
@@ -74,5 +81,9 @@ class InputLocationViewController: UIViewController{
         return StudentInformation(studentInfo)
     }
     
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        locationTextField.resignFirstResponder()
+        return true
+    }
     
 }
