@@ -192,7 +192,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="AMc-DE-OaK" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1233" y="619"/>
+            <point key="canvasLocation" x="-929" y="631"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="Vfb-5w-eJz">
@@ -368,7 +368,7 @@
                         </barButtonItem>
                     </navigationItem>
                     <connections>
-                        <outlet property="acitivityIndicator" destination="jRM-hc-yhK" id="mEc-yf-dhj"/>
+                        <outlet property="activityIndicator" destination="jRM-hc-yhK" id="tMq-pm-Eze"/>
                         <outlet property="locationTextField" destination="2rd-7J-7tN" id="cxt-LK-nB3"/>
                         <segue destination="MDw-sk-bC2" kind="show" identifier="findonthemap" id="WqA-1g-BaO"/>
                     </connections>

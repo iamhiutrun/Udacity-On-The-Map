@@ -40,6 +40,12 @@ class LoginViewController: UIViewController {
     func handleLoginResponse(success: Bool, error: Error?) {
         DispatchQueue.main.async {
             self.hideIndicator(self.acitivityIndicator)
+            if let error = error{
+                DispatchQueue.main.async {
+                    self.showAlert(message: error.localizedDescription, title: "Login Error")
+                }
+                return
+            }
             if success {
                 self.performSegue(withIdentifier: "login", sender: nil)
             } else {

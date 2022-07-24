@@ -62,7 +62,7 @@ class UdacityClient {
                 })
                 completion(true, nil)
             } else {
-                completion(false, nil)
+                completion(false, error)
             }
         }
     }
